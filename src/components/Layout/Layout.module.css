@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: white;
+  background-color: var(--gray);
+
+  --x-offset: 20px;
+}
+
+.header {
+  padding: 10px var(--x-offset);
+  background-color: var(--gray-dark);
+}
+
+.main {
+  flex-grow: 1;
+  padding: 0 var(--x-offset);
+}
+
+.footer {
+  display: flex;
+  padding: 0.5rem var(--x-offset);
+  background-color: var(--gray-dark);
+}
+
+.footerCopyright {
+  margin-left: auto;
+  font-style: italic;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,52 @@
+.root {
+  display: flex;
+  gap: 4rem;
+}
+
+.section {
+  position: relative;
+}
+
+.section:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -2rem;
+  border-right: 1px dashed var(--gray-light);
+}
+
+.fieldset {
+  margin: 0 0 1rem;
+}
+
+.fieldsetItem {
+  margin: 0 0 0.5rem;
+}
+
+.label {
+  display: inline-block;
+  min-width: 200px;
+}
+
+.label[aria-required]::after {
+  content: " *"
+}
+
+.root input {
+  padding: 0.5em 0.75em;
+  background-color: var(--gray-light);
+  color: var(--gray-dark);
+  font-weight: bold;
+  appearance: none;
+}
+
+.unit {
+  margin: 0 0 0 1rem;
+}
+
+/* Result */
+
+.resultItemLabel::after {
+  content: ": "
+}
