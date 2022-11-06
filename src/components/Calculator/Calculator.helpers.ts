@@ -17,7 +17,7 @@ interface IGetDrillPowerReqProps {
   consMod?: number;
   effMod?: number;
 };
-const getDrillPowerReq = ({
+export const getDrillPowerReq = ({
   basicPowerReq,
   consMod = 0,
   effMod = 0
@@ -31,7 +31,7 @@ interface IGetDrillSpeedProps {
   basicSpeed: number;
   speedMod?: number;
 }
-const getDrillSpeed = ({
+export const getDrillSpeed = ({
   basicSpeed,
   speedMod = 0
 }: IGetDrillSpeedProps): number => basicSpeed + basicSpeed * speedMod;
@@ -68,7 +68,5 @@ export const getDrillInfo = (props: IAllSettings): IGetDrillInfoReturns => ({
 export const getGenNumber = (props: IAllSettings): number => {
   const { reqPower, genOutput, drillPowerReq } = props;
   const drillTotalPowerDrain = getDrillNumber(props) * getDrillInfo(props).drillPowerReq;
-  console.log(drillTotalPowerDrain);
-
   return Math.ceil((reqPower + drillTotalPowerDrain) / genOutput);
 }
