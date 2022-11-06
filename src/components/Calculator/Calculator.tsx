@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import styles from './Calculator.module.css';
 import { getDrillNumber, getFormData, getGenNumber } from './Calculator.helpers';
+import { ResultItem } from '../ResultItem/ResultItem';
 
 export const Calculator = () => {
   const formRef = useRef<HTMLFormElement>();
@@ -109,19 +110,8 @@ export const Calculator = () => {
       <section className={styles.section}>
         <h2 className={styles.sectionHeader}>Result</h2>
         <div className={styles.sectionItems}>
-          {/* TODO: make it single component (DRY) */}
-          {!!drillNumber && (
-            <div className={styles.resultItem}>
-              <span className={styles.resultItemLabel}>Drill Number Required</span>
-              <span className={styles.resultItemValue}>{drillNumber}</span>
-            </div>
-          )}
-          {!!genNumber && (
-            <div className={styles.resultItem}>
-              <span className={styles.resultItemLabel}>Gen Number Required</span>
-              <span className={styles.resultItemValue}>{genNumber}</span>
-            </div>
-          )}
+          {!!drillNumber && <ResultItem label="Drill Number Required" value={drillNumber} />}
+          {!!genNumber && <ResultItem label="Gen Number Required" value={genNumber} />}
         </div>
       </section>
     </div>

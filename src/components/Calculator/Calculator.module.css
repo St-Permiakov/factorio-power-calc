@@ -44,9 +44,3 @@
 .unit {
   margin: 0 0 0 1rem;
 }
-
-/* Result */
-
-.resultItemLabel::after {
-  content: ": "
-}
